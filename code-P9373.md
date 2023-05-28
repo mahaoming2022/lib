@@ -39,12 +39,8 @@ signed main()
     read(t);
     while(t--){
         int n=readint(),k=readint();
-        if(2*k>=n){
-            cout<<"-1"<<endl;
-            continue;
-        }
-        else 
-            cout<<k<<" "<<n-k<<endl;
+
+        cout<<k<<" "<<n-k<<endl; //关键
     }
     return 0;
 }
