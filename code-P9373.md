@@ -1,3 +1,28 @@
+第一份暴力：
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        long long int n,k;
+        cin>>n>>k;
+        bool b=true;
+        for(long long int i=0;i<n;i++)
+            if(i%(n-i)==k){
+                cout<<i<<" "<<n-i<<endl;
+                b=false;
+                break;
+            }
+        if(b)
+            cout<<-1<<endl;
+    }
+    return 0;
+}
+```
+
 第二份代码如下：
 
 ```cpp
