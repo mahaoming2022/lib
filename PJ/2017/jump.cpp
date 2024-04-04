@@ -6,7 +6,7 @@ using namespace std;
 
 typedef long long ll;
 const int N=5e5+24;
-const ll INF=1<<29;
+const ll INF=9e17;
 
 int n;
 ll d,k;
@@ -54,7 +54,7 @@ int main()
     int l=0,r=dis[n];
     while(l<r)
     {
-        ll mid=l+r>>1;
+        ll mid=(l+r)>>1;
         if(check(mid))
             r=mid;
         else
