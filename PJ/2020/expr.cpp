@@ -24,20 +24,21 @@ inline bool dfs1(int u,bool f)
         lv=dfs1(lc[u],f^notf[lc[u]]);
     if(rc[u]) 
         rv=dfs1(rc[u],f^notf[rc[u]]);
-    if(ans==-1){
+    if(val[u]==-1){
         if(!lv)
             tag[rc[u]]=1;
         if(!rv)
             tag[lc[u]]=1;
-        ans=lv&rv;
+        ans=lv&&rv;
     }
-    if(ans==-2){
-        ans=lv|rv;
+    if(val[u]==-2){
         if(lv)
             tag[rc[u]]=1;
-        if(!rv)
-            tag[lc[u]]=1;
+        if(rv)
+            tag[lc[u]]=1; 
+        ans=lv||rv;
     }
+    if(f) ans=!ans;
     return ans;
 }
 
@@ -62,7 +63,7 @@ int main()
     cin>>n;
     rep(i,1,n)
         cin>>a[i];
-    int cnt=0;
+    int cnt=0;  
     for(int i=0;i<len;)
     {
         if(str[i]==' ')
@@ -107,7 +108,7 @@ int main()
             notf[sta.top()]=1,i++;
     }
     bool ans=dfs1(cnt,notf[cnt]);
-    cout<<ans;return 0;
+    dfs2(cnt,0);
     cin>>Q;
     while(Q--)
     {

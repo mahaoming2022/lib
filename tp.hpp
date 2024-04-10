@@ -1,3 +1,4 @@
+// #define EXT
 #include <bits/stdc++.h>
 #ifdef EXT
     #include <bits/extc++.h>
@@ -24,14 +25,14 @@ typedef __int128 i128;
 // const integer
 
 const int INF=1<<29;
-// const ll INF=9e17;
+const ll INFL=1ll<59;
 
 // const array
 const int Dx4[]={0,0,1,-1};
 const int Dy4[]={1,-1,0,0};
 const int Dx8[]={0,0,1,1,1,-1,-1,-1};
 const int Dy8[]={1,-1,0,-1,1,0,-1,1};
-const int M10[]
+const ll M10[]={1,10,100,1000,10000,100000,1000000,(ll)1e7,(ll)1e8,(ll)1e9,(ll)1e10,(ll)1e11,(ll)1e12,(ll)1e13,(ll)1e14,(ll)1e15,(ll)1e16,(ll)1e17,(ll)1e18};
 
 //fast IO
 inline int readi(){int x=0,f=1;char ch=getchar();
