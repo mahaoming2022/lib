@@ -13,8 +13,8 @@ int a[N],b[N],c[N],d[N];
 
 int main()
 {
-    // freopen("in.in","r",stdin);
-    // freopen("out.out","w",stdout);
+    freopen("in.in","r",stdin);
+    freopen("out.out","w",stdout);
     cin>>n>>m;
     rep(i,1,m){
         cin>>x[i];

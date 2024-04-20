@@ -15,40 +15,47 @@ int val[N],lc[N],rc[N]; //expr tree
 int ndn[N];
 stack<int> sta;
 
-// 1 | (A) or 0 & (B) has not to judge
-
-inline bool dfs1(int u,bool f)
+inline int dfs1(int u)
 {
-    bool lv,rv,ans=val[u];
-    if(lc[u]) 
-        lv=dfs1(lc[u],f^notf[lc[u]]);
-    if(rc[u]) 
-        rv=dfs1(rc[u],f^notf[rc[u]]);
-    if(val[u]==-1){
-        if(!lv)
-            tag[rc[u]]=1;
-        if(!rv)
-            tag[lc[u]]=1;
-        ans=lv&&rv;
+    bool f=notf[u];
+    if(!lc[u]&&!rc[u])
+        return (f?(!val[u]):val[u]);
+    else
+    {
+        bool v1=dfs1(lc[u]);
+        bool v2=dfs1(rc[u]);
+        bool ans;
+        if(val[u]==-1) //&
+        {
+            if(!v1)
+                tag[rc[u]]=1;
+            if(!v2)
+                tag[lc[u]]=1;
+            ans=v1&v2;
+        }
+        if(val[u]==-2) //|
+        {
+            if(v1)
+                tag[rc[u]]=1;
+            if(v2)
+                tag[lc[u]]=1;
+            ans=v1|v2;
+        }
+        return (f?(!ans):ans);
     }
-    if(val[u]==-2){
-        if(lv)
-            tag[rc[u]]=1;
-        if(rv)
-            tag[lc[u]]=1; 
-        ans=lv||rv;
-    }
-    if(f) ans=!ans;
-    return ans;
 }
 
-inline void dfs2(int u,bool f)
+inline void dfs2(int u)
 {
-    if(f) tag[lc[u]]=tag[rc[u]]=1;
-    if(lc[u])
-        dfs2(lc[u],tag[lc[u]]);
-    if(rc[u]) 
-        dfs2(rc[u],tag[rc[u]]);
+    if(!lc[u]&&!rc[u])
+        return;
+    else
+    {
+        if(tag[u]) tag[lc[u]]=1;
+        if(tag[u]) tag[rc[u]]=1;
+        dfs2(lc[u]);
+        dfs2(rc[u]);
+    }
 }
 
 int main()
@@ -56,6 +63,7 @@ int main()
 #ifndef ONLINE_JUDGE
     freopen("in.in","r",stdin);
     freopen("out.out","w",stdout);
+    //believe2024zk
 #endif
     ios::sync_with_stdio(false);
     getline(cin,str);
@@ -77,7 +85,7 @@ int main()
             i++;
             while(str[i]!=' ')
             {
-                x=x*10+(str[i]-'0');
+                x=x*10+str[i]-'0';
                 i++;
             }
             val[++cnt]=a[x];
@@ -105,15 +113,16 @@ int main()
             i++;
         }
         if(str[i]=='!')
-            notf[sta.top()]=1,i++;
+            notf[sta.top()]^=1,i++;
     }
-    bool ans=dfs1(cnt,notf[cnt]);
-    dfs2(cnt,0);
+    int ans=dfs1(cnt); 
+    dfs2(cnt);
+    int Q;
     cin>>Q;
     while(Q--)
     {
-        int tmp;
-        cin>>tmp;
-        cout<<(tag[ndn[tmp]]?ans:!ans)<<endl;
+        int x;
+        cin>>x;
+        cout<<(tag[ndn[x]]?ans:!ans)<<endl;
     }
 }
