@@ -1,76 +1,85 @@
 #include <bits/stdc++.h>
-#define rep(i,l,r) for(int i=(l);i<=(r);i++)
-#define pii pair<int,int>
+#define rep(i,l,r) for(int i=(l);i<=(r);++i)
 
 using namespace std;
+typedef double db;
 typedef long long ll;
 
-const int N=2e5+23;
+const int N=1e5+23;
 
 int n,Q;
-ll a[N],sum[4*N],mi[4*N],tag[4*N];
+db date[N],sq[4*N],sum[4*N],tag[4*N];
 
-inline void build(int l,int r,int p)
-{
-    int lc=p<<1,rc=p<<1|1,mid=l+(r-l)/2;
-    if(l==r){
-        sum[p]=a[l];
-        mi[p]=a[l];
-        return ;
-    }
-    build(l,mid,lc);build(mid+1,r,rc);
-    sum[p]=sum[lc]+sum[rc];
-    mi[p]=min(mi[lc],mi[rc]);
-}
+// update: +=2k*pre_sum+len*k^2
+
+inline void push_up(int l,int r,int p)
+{sum[p]=sum[p<<1]+sum[p<<1|1];
+sq[p]=sq[p<<1]+sq[p<<1|1];}
 
 inline void push_down(int l,int r,int p)
 {
-    int lc=p<<1,rc=p<<1|1,mid=l+(r-l)/2;
-    sum[lc]+=tag[p]*(mid-l+1);
-    sum[rc]+=tag[p]*(r-mid);
-    mi[lc]+=tag[p],mi[rc]+=tag[p];
-    tag[lc]+=tag[p],tag[rc]+=tag[p];
+    int mid=l+((r-l)>>1);
+    sq[p<<1]+=2*tag[p]*sum[p<<1]+(mid-l+1)*tag[p]*tag[p];
+    sq[p<<1|1]+=2*tag[p]*sum[p<<1|1]+(r-mid)*tag[p]*tag[p];
+    sum[p<<1]+=(mid-l+1)*tag[p];
+    sum[p<<1|1]+=(r-mid)*tag[p];
+    tag[p<<1]+=tag[p];
+    tag[p<<1|1]+=tag[p];
     tag[p]=0;
 }
 
-inline void update(int s,int t,int l,int r,int v,int p)
+inline void build(int l,int r,int p)
 {
-    int lc=p*2,rc=p*2+1;
-    if(s<=l&&r<=t)
+    if(l==r)
     {
-        sum[p]+=v*(r-l+1);
-        mi[p]+=v,tag[p]+=v;
-        return;
+        sum[p]=date[l];
+        sq[p]=date[l]*date[l];
+        return ;
     }
-    if(tag[p]) push_down(l,r,p);
-    int mid=l+(r-l)/2;
-    if(s<=mid) update(s,t,l,mid,v,lc);
-    if(t>mid) update(s,t,mid+1,r,v,rc);
-    sum[p]=sum[lc]+sum[rc];
-    mi[p]=min(mi[lc],mi[rc]);
+    int mid=l+((r-l)>>1);
+    build(l,mid,p<<1);
+    build(mid+1,r,p<<1|1);
+    push_up(l,r,p);
 }
 
-inline ll query_min(int s,int t,int l,int r,int p)
+// update: +=2k*pre_sum+len*k^2
+inline void update(int s,int t,int k,int l,int r,int p)
 {
-    int lc=p<<1,rc=p<<1|1;  
-    if(s<=l&&r<=t) return mi[p]; // [l,r] in [s,t]
+    if(s<=l&&r<=t)
+    {
+        tag[p]+=k;
+        sq[p]+=2*k*sum[p]+(r-l+1)*k*k;
+        sum[p]+=(r-l+1)*k;
+        return ;
+    }
     if(tag[p]) push_down(l,r,p);
-    int mid=l+(r-l)/2;
-    ll ans=1ll<<59;
-    if(s<=mid) ans=min(ans,query_min(s,t,l,mid,lc));
-    if(t>mid) ans=min(ans,query_min(s,t,mid+1,r,rc));
+    int mid=l+((r-l)>>1);
+    if(s<=mid) update(s,t,k,l,mid,1<<p);
+    if(t>mid) update(s,t,k,mid+1,r,1<<p|1);
+    push_up(l,r,p);
+}
+
+inline db query_sq(int s,int t,int l,int r,int p)
+{
+    if(s<=l&&r<=t)
+        return sq[p];
+    if(tag[p]) push_down(l,r,p);
+    int mid=l+((r-l)>>1);
+    db ans=0;
+    if(s<=mid) ans+=query_sq(s,t,l,mid,1<<p);
+    if(t>mid) ans+=query_sq(s,t,mid+1,r,1<<p|1);
     return ans;
 }
 
-inline ll query_sum(int s,int t,int l,int r,int p)
+inline db query_sum(int s,int t,int l,int r,int p)
 {
-    int lc=p<<1,rc=p<<1|1;  
-    if(s<=l&&r<=t) return sum[p];
+    if(s<=l&&r<=t)
+        return sum[p];
     if(tag[p]) push_down(l,r,p);
-    int mid=l+(r-l)/2;
-    ll ans=0;
-    if(s<=mid) ans+=query_sum(s,t,l,mid,lc);
-    if(t>mid) ans+=query_sum(s,t,mid+1,r,rc);
+    int mid=l+((r-l)>>1);
+    db ans=0;
+    if(s<=mid) ans+=query_sum(s,t,l,mid,1<<p);
+    if(t>mid) ans+=query_sum(s,t,mid+1,r,1<<p|1);
     return ans;
 }
 
@@ -80,26 +89,27 @@ int main()
     freopen("in.in","r",stdin);
     freopen("out.out","w",stdout);
 #endif
+    ios::sync_with_stdio(false);
     cin>>n>>Q;
     rep(i,1,n)
-        cin>>a[i];
+        cin>>date[i];
     build(1,n,1);
+    cout<<fixed;cout.precision(4);
+    cout.setf(ios_base::showpoint);
     while(Q--)
     {
-        char opt;
-        cin>>opt;
-        if(opt=='P'){
-            ll l,r,z;
-            cin>>l>>r>>z;
-            update(l,r,1,n,z,1);
+        int opt,l,r;
+        cin>>opt>>l>>r;
+        if(opt==1) 
+        {
+            db k;cin>>k;
+            update(l,r,k,1,n,1);
         }
-        if(opt=='M'){
-            ll l,r;cin>>l>>r;
-            cout<<query_min(l,r,1,n,1)<<endl;
-        }
-        if(opt=='S'){
-            ll l,r;cin>>l>>r;
-            cout<<query_sum(l,r,1,n,1)<<endl;
+        if(opt==2)
+            cout<<query_sum(l,r,1,n,1)/(r-l+1)<<endl;
+        if(opt==3){
+            db avg=query_sum(l,r,1,n,1)/(r-l+1);
+            cout<<-avg*avg+query_sq(l,r,1,n,1)/(r-l+1)<<endl;
         }
     }
-}
+} 
