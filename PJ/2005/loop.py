@@ -9,7 +9,7 @@ m=10**(k+1)
 for i in range(1,k+1):
     p=n; r=1
     found=False
-    for j in range(1,11): //注意
+    for j in range(1,11):
         p*=q
         p%=m
         r*=q
