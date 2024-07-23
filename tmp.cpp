@@ -1,32 +1,50 @@
-#include<bits/stdc++.h>
-#define rep(i,l,r) for(int i=(l);i<=(r);++i)
+// #define EXT
+#include <bits/stdc++.h>
+#ifdef EXT
+    #include <bits/extc++.h>
+#endif
+
+//define
+#define i64 long long
+#define rep(i,l,r) for(int i=(l);i<=(r);i++)
+#define fdn(i,r,l) for(int i=(r);i>=(l);i--)
+#define pii pair<int,int>
 
 using namespace std;
+
+// type define
 typedef long long ll;
 typedef double db;
+typedef __int128 i128;
+#ifdef EXT
+    typedef unsigned int ui;
+    typedef unsigned long long ull;
+    typedef long double ldb;
+#endif
 
-const int N=1024;
+const int N=1e6+23;
 
-int n,m,p;
-int coin[N][N],cost[N],dp[N];
+int h,w,y,n=0;
+int a[N];
 
-int main(){
+int main()
+{
 #ifndef ONLINE_JUDGE
     freopen("in.in","r",stdin);
-    freopen("out.out","w",stdout);
-#endif
-    cin>>n>>m>>p;
-    rep(i,1,n) rep(j,1,m) cin>>coin[i][j];
-    rep(i,1,n) cin>>cost[i];
-    rep(i,1,m) dp[i]=-1<<29;
-    rep(i,1,m) rep(j,1,n){
-        int sum=0;
-    for(int k=1;k<=p&&k<=i;k++){
-        int lst=j-k;
-        if(lst<=0)
-            lst=n+lst%n; 
-        sum+=coin[lst][i-k+1];
-        dp[i]=max(dp[i],dp[i-k]+sum-cost[lst]);
-    }}
-    cout<<dp[m];
+    // freopen("tmp.out","w",stdout);
+#endif  
+    cin>>h>>w>>y;
+    rep(i,1,h) rep(j,1,w)
+        cin>>a[++n];
+    sort(a+1,a+1+n);
+    int lev=0,pre=0;
+    int ans=n;
+    rep(i,1,y)
+    {
+        lev++;
+        int pos=lower_bound(a+1,a+1+n,lev)-a;
+        ans-=pos-pre; 
+        cout<<ans-(pos-pre)<<endl;
+        pre=pos;
+    }
 }
