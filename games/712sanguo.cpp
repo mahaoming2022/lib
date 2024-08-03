@@ -6,36 +6,36 @@ using namespace std;
 void welcome()
 {
     system("cls");
-    cout<<"»¶Ó­À´µ½712Èý¹úÉ±£¨1.3£©£¡\n";
-    cout<<"Áé¸Ð£ºxxmzhuyuyang & MasonXu     ´úÂë£ºMasonXu\n";
-    cout<<"A-¿¨ÅÆ½éÉÜ	B-¿ªÊ¼ÓÎÏ·\n";
+    cout<<"æ¬¢è¿Žæ¥åˆ°712ä¸‰å›½æ€ï¼ˆ1.3ï¼‰ï¼\n";
+    cout<<"çµæ„Ÿï¼šxxmzhuyuyang & MasonXu     ä»£ç ï¼šMasonXu\n";
+    cout<<"A-å¡ç‰Œä»‹ç»	B-å¼€å§‹æ¸¸æˆ\n";
     char key=getch();
     if(key=='a')
     {
-        cout<<"±¾´Î¸üÐÂÄÚÈÝ£º¿¨ÅÆµÈ¼¶£¬ÐÒÔË²Ý£¬½ÇÉ«ÐìÄ½ìä\n";
-        cout<<"1. ¿¨ÅÆ½éÉÜ (¹²42ÕÅ)\n";
-        cout<<"(1) ÄÚ¾í*8 Ê¹×Ô¼º³É¼¨+8\n";
-        cout<<"(2) °ÚÀÃ*8 µÖÏû'¸ÉÈÅ'Ð§¹û\n";
-        cout<<"(3) ¸ÉÈÅ*10 Ê¹ÈÎÒâÍæ¼Ò³É¼¨-8\n";
-        cout<<"(4) ÌýÐ´*4 ³ý×Ô¼ºÍâËùÓÐÍæ¼ÒÒªÃ´³ö1ÕÅ'¸ÉÈÅ'£¬ÒªÃ´³É¼¨-8\n";
-        cout<<"(5) ¿¼ÊÔ*4 ³ý×Ô¼ºÍâËùÓÐÍæ¼ÒÒªÃ´³ö1ÕÅ'ÄÚ¾í'£¬ÒªÃ´³É¼¨-8\n";
-        cout<<"(6) ÄÚ¾í½ûÁî*2 ËùÓÐÍæ¼Ò²»¿ÉÖ÷¶¯³ö'ÄÚ¾í'£¬³ÖÐø1»ØºÏ\n";
-        cout<<"(7) ÖÆ²Ã¾í¹Ö*2 Ê¹³É¼¨×î¸ßÕß³É¼¨-8\n";
-        cout<<"(8) ¹ÄÀø°ÚÀÃ*2 Ê¹³É¼¨×îµÍÕß³É¼¨+8\n";
-        cout<<"(9) ÐÒÔË²Ý*2 ÓÐ¸ÅÂÊ³éµ½¸ß¼¶¿¨ÅÆ\n";
-        cout<<"2. »ù±¾¹æÔò\n";
-        cout<<"Ã¿ÈË³õÊ¼150·Ö£¬Âú·Ö150·Ö£¬·ÖÊýÐ¡ÓÚ90·Ö±»ÌÔÌ­\n";
-        cout<<"Ã¿ÈË³õÊ¼4ÕÅËæ»úÅÆ£¬ËùÓÐÈËÂÖÁ÷³öÅÆ£¬Ã¿ÈËÔÚ»ØºÏ¿ªÊ¼³é2ÕÅÅÆ\n";
-        cout<<"Ã¿ÈËÔÚ×Ô¼º»ØºÏ¿ÉÒÔ³öÈÎÒâ¶àµÄ¸ÉÈÅ£¬µ«Ö»ÄÜ³öÒ»´ÎÄÚ¾í\n";
-        cout<<"ÇÒ»ØºÏ½áÊøÊ±Ö»ÄÜ±£Áô3ÕÅÅÆ\n";
-        cout<<"3.½ÇÉ«\n";
-        cout<<"(1) ÎâÅµ\n";
-        cout<<"¾¿¼«¾íÍõ£º¶ÔÄÚ¾íÒÑ¾­Á·µÃ×ÔÈçµÄËý×Ô¼ºÊ¹ÓÃÄÚ¾í¶îÍâÔÙ¼Ó4·Ö\n";
-        cout<<"(2) ÖììÏÑó\n";
-        cout<<"·èÅú£ºÊ¹ÓÃ¸ÉÈÅÊ±£¬¸ÉÈÅ¶ÔÏó·ÖÊý¶îÍâ-4\n";
-        cout<<"(3) ÐìÄ½ìä\n";
-        cout<<"ÎÞÏÞRP£ºÃ»ÓÐÐÒÔË²ÝÊ±ÊÓÎªÓÐC¼¶ÐÒÔË²Ý£¬ÓÐÐÒÔË²ÝÊ±ÐÒÔË²ÝµÈ¼¶ÊÓÎª+1\n";
-        cout<<"ÊýÑ§´óÀÐ£ºÎÞÊÓ¿¼ÊÔ\n";
+        cout<<"æœ¬æ¬¡æ›´æ–°å†…å®¹ï¼šå¡ç‰Œç­‰çº§ï¼Œå¹¸è¿è‰ï¼Œè§’è‰²å¾æ…•ç†¹\n";
+        cout<<"1. å¡ç‰Œä»‹ç» (å…±42å¼ )\n";
+        cout<<"(1) å†…å·*8 ä½¿è‡ªå·±æˆç»©+8\n";
+        cout<<"(2) æ‘†çƒ‚*8 æŠµæ¶ˆ'å¹²æ‰°'æ•ˆæžœ\n";
+        cout<<"(3) å¹²æ‰°*10 ä½¿ä»»æ„çŽ©å®¶æˆç»©-8\n";
+        cout<<"(4) å¬å†™*4 é™¤è‡ªå·±å¤–æ‰€æœ‰çŽ©å®¶è¦ä¹ˆå‡º1å¼ 'å¹²æ‰°'ï¼Œè¦ä¹ˆæˆç»©-8\n";
+        cout<<"(5) è€ƒè¯•*4 é™¤è‡ªå·±å¤–æ‰€æœ‰çŽ©å®¶è¦ä¹ˆå‡º1å¼ 'å†…å·'ï¼Œè¦ä¹ˆæˆç»©-8\n";
+        cout<<"(6) å†…å·ç¦ä»¤*2 æ‰€æœ‰çŽ©å®¶ä¸å¯ä¸»åŠ¨å‡º'å†…å·'ï¼ŒæŒç»­1å›žåˆ\n";
+        cout<<"(7) åˆ¶è£å·æ€ª*2 ä½¿æˆç»©æœ€é«˜è€…æˆç»©-8\n";
+        cout<<"(8) é¼“åŠ±æ‘†çƒ‚*2 ä½¿æˆç»©æœ€ä½Žè€…æˆç»©+8\n";
+        cout<<"(9) å¹¸è¿è‰*2 æœ‰æ¦‚çŽ‡æŠ½åˆ°é«˜çº§å¡ç‰Œ\n";
+        cout<<"2. åŸºæœ¬è§„åˆ™\n";
+        cout<<"æ¯äººåˆå§‹150åˆ†ï¼Œæ»¡åˆ†150åˆ†ï¼Œåˆ†æ•°å°äºŽ90åˆ†è¢«æ·˜æ±°\n";
+        cout<<"æ¯äººåˆå§‹4å¼ éšæœºç‰Œï¼Œæ‰€æœ‰äººè½®æµå‡ºç‰Œï¼Œæ¯äººåœ¨å›žåˆå¼€å§‹æŠ½2å¼ ç‰Œ\n";
+        cout<<"æ¯äººåœ¨è‡ªå·±å›žåˆå¯ä»¥å‡ºä»»æ„å¤šçš„å¹²æ‰°ï¼Œä½†åªèƒ½å‡ºä¸€æ¬¡å†…å·\n";
+        cout<<"ä¸”å›žåˆç»“æŸæ—¶åªèƒ½ä¿ç•™3å¼ ç‰Œ\n";
+        cout<<"3.è§’è‰²\n";
+        cout<<"(1) å´è¯º\n";
+        cout<<"ç©¶æžå·çŽ‹ï¼šå¯¹å†…å·å·²ç»ç»ƒå¾—è‡ªå¦‚çš„å¥¹è‡ªå·±ä½¿ç”¨å†…å·é¢å¤–å†åŠ 4åˆ†\n";
+        cout<<"(2) æœ±ç…œæ´‹\n";
+        cout<<"ç–¯æ‰¹ï¼šä½¿ç”¨å¹²æ‰°æ—¶ï¼Œå¹²æ‰°å¯¹è±¡åˆ†æ•°é¢å¤–-4\n";
+        cout<<"(3) å¾æ…•ç†¹\n";
+        cout<<"æ— é™RPï¼šæ²¡æœ‰å¹¸è¿è‰æ—¶è§†ä¸ºæœ‰Cçº§å¹¸è¿è‰ï¼Œæœ‰å¹¸è¿è‰æ—¶å¹¸è¿è‰ç­‰çº§è§†ä¸º+1\n";
+        cout<<"æ•°å­¦å¤§ä½¬ï¼šæ— è§†è€ƒè¯•\n";
         getch();
         welcome();
     }
@@ -51,7 +51,7 @@ bool isAI[1005];
 int role[1005];
 int luck[1005];
 
-string rolename[1005]= {"","ÎâÅµ","ÖììÏÑó","ÐìÄ½ìä"};
+string rolename[1005]= {"","å´è¯º","æœ±ç…œæ´‹","å¾æ…•ç†¹"};
 int zazz[1005]= {0,8,8,10,4,4,2,2,2,4};
 int lvchance[1005]= {0,100,40,30,20,10,3,2,1,0,0};
 bool fsuc;
@@ -59,7 +59,7 @@ void maydied(int x)
 {
     if(score[x]<90)
     {
-        cout<<name[x]<<"·ÖÊý²»×ã90£¬±»xb»÷±ÐÁË£¡\n";
+        cout<<name[x]<<"åˆ†æ•°ä¸è¶³90ï¼Œè¢«xbå‡»æ¯™äº†ï¼\n";
         leftn--;
         alive[x]=false;
     }
@@ -104,7 +104,7 @@ void gpause(int x)
 void ppause(int x)
 {
     system("cls");
-    cout<<"ÏÂÃæÓÉ "<<name[x]<<" ²Ù×÷\n";
+    cout<<"ä¸‹é¢ç”± "<<name[x]<<" æ“ä½œ\n";
     gpause(x);
 }
 
@@ -118,7 +118,7 @@ void spendcard(int x,int y)
 
 void nameof(int x,int y)
 {
-    string tmp1[14]= {"","ÄÚ¾í","°ÚÀÃ","¸ÉÈÅ","ÌýÐ´","¿¼ÊÔ","ÄÚ¾í½ûÁî","ÖÆ²Ã¾í¹Ö","¹ÄÀø°ÚÀÃ","ÐÒÔË²Ý"};
+    string tmp1[14]= {"","å†…å·","æ‘†çƒ‚","å¹²æ‰°","å¬å†™","è€ƒè¯•","å†…å·ç¦ä»¤","åˆ¶è£å·æ€ª","é¼“åŠ±æ‘†çƒ‚","å¹¸è¿è‰"};
     cout<<tmp1[x];
     string tmp2[14]= {"","C","Un","R","E","L","M","Ul","S"};
     if(y>1)
@@ -128,16 +128,16 @@ int main()
 {
     srand((unsigned)time(NULL));
     welcome();
-    cout<<"ÇëÊäÈëÈËÊý£º\n";
+    cout<<"è¯·è¾“å…¥äººæ•°ï¼š\n";
     cin>>n;
     for(int i=1; i<=n; i++)
     {
-        cout<<"ÇëÊäÈëÍæ¼Ò"<<i<<"ÐÕÃû£º\n";
+        cout<<"è¯·è¾“å…¥çŽ©å®¶"<<i<<"å§“åï¼š\n";
         cin>>name[i];
         score[i]=150;
         randcard(i,2);
         alive[i]=true;
-        cout<<name[i]<<"ÊÇ·ñÊ¹ÓÃAIÍÐ¹Ü?(Y/N)\n";
+        cout<<name[i]<<"æ˜¯å¦ä½¿ç”¨AIæ‰˜ç®¡?(Y/N)\n";
         char key=getch();
         if(key=='y')
             isAI[i]=true;
@@ -182,10 +182,10 @@ int main()
 startout:
         ;
         system("cls");
-        cout<<"µ±Ç°ÊÇ "<<name[I]<<" µÄ»ØºÏ";
+        cout<<"å½“å‰æ˜¯ "<<name[I]<<" çš„å›žåˆ";
         if(isAI[I])
-            cout<<"£¨¸ÃÍæ¼ÒÕýÔÚ±»AIÍÐ¹Ü£©";
-        cout<<"\nÍæ¼Ò£º\n";
+            cout<<"ï¼ˆè¯¥çŽ©å®¶æ­£åœ¨è¢«AIæ‰˜ç®¡ï¼‰";
+        cout<<"\nçŽ©å®¶ï¼š\n";
         fsuc=false;
         for(int i=1; i<=n; i++)
         {
@@ -198,8 +198,8 @@ startout:
             }
         }
         if(neijuanjl)
-            cout<<name[neijuanjl]<<"ÕýÔÚÊ¹ÓÃÄÚ¾í½ûÁî\n";
-        cout<<"¿¨ÅÆ£º\n";
+            cout<<name[neijuanjl]<<"æ­£åœ¨ä½¿ç”¨å†…å·ç¦ä»¤\n";
+        cout<<"å¡ç‰Œï¼š\n";
         cout<<cn[I]<<endl;
         for(int i=1; i<=cn[I]; i++)
         {
@@ -208,7 +208,7 @@ startout:
             cout<<"("<<(char)('A'+i-1)<<")\t";
         }
         cout<<"\n";
-        cout<<"ÇëÑ¡ÔñÒª³öµÄÅÆ£¨½áÊø»ØºÏ°´0£©£º\n";
+        cout<<"è¯·é€‰æ‹©è¦å‡ºçš„ç‰Œï¼ˆç»“æŸå›žåˆæŒ‰0ï¼‰ï¼š\n";
         if(!isAI[I])
             key=getch();
         else
@@ -230,7 +230,7 @@ qip:
             if(cn[I]>3)
             {
                 system("cls");
-                cout<<"ÇëÆúµô"<<cn[I]-3<<"ÕÅÅÆ\n";
+                cout<<"è¯·å¼ƒæŽ‰"<<cn[I]-3<<"å¼ ç‰Œ\n";
                 for(int i=1; i<=cn[I]; i++)
                 {
                     int t=hold[I][i];
@@ -250,7 +250,7 @@ qip:
                 wantk=hold[I][wantt];
                 if(wantt<1 || wantt>cn[I])
                     goto qip;
-                cout<<"ÄãÆúµôÁË";
+                cout<<"ä½ å¼ƒæŽ‰äº†";
                 nameof(wantk,holdlv[I][wantt]);
                 spendcard(I,wantk);
                 cout<<"\n";
@@ -267,37 +267,37 @@ qip:
         wantlv=holdlv[I][wantt];
         if(wantt<1 || wantt>cn[I])
             goto startout;
-        cout<<"ÒÑÊ¹ÓÃ";
+        cout<<"å·²ä½¿ç”¨";
         nameof(wantk,holdlv[I][wantt]);
         cout<<"\n";
         if(wantk==1)
         {
             if(neijuanjl && neijuanjl!=I)
-                cout<<name[neijuanjl]<<"ÕýÔÚÊ¹ÓÃÄÚ¾í½ûÁî£¡\n";
+                cout<<name[neijuanjl]<<"æ­£åœ¨ä½¿ç”¨å†…å·ç¦ä»¤ï¼\n";
             else if(juaned)
-                cout<<"ÄãÔÚ±¾»ØºÏÒÑ¾­¾í¹ýÁË£¡\n";
+                cout<<"ä½ åœ¨æœ¬å›žåˆå·²ç»å·è¿‡äº†ï¼\n";
             else
             {
                 int tmp_should=7+wantlv;
                 if(role[I]==1)
                 {
-                    cout<<"´¥·¢ÎâÅµ¼¼ÄÜ[¾¿¼«¾íÍõ]£¬³É¼¨¶îÍâ+4\n";
+                    cout<<"è§¦å‘å´è¯ºæŠ€èƒ½[ç©¶æžå·çŽ‹]ï¼Œæˆç»©é¢å¤–+4\n";
                     tmp_should+=4;
                 }
-                cout<<"³É¼¨+"<<tmp_should<<"\n";
+                cout<<"æˆç»©+"<<tmp_should<<"\n";
                 score[I]+=tmp_should;
                 if(score[I]>150)
                     score[I]=150;
-                cout<<"Ä¿Ç°·ÖÊý"<<score[I]<<"/150\n";
+                cout<<"ç›®å‰åˆ†æ•°"<<score[I]<<"/150\n";
                 juaned=true;
                 spendcard(I,wantt);
             }
         }
         if(wantk==2)
-            cout<<"²»¿ÉÖ÷¶¯Ê¹ÓÃ°ÚÀÃ£¡\n";
+            cout<<"ä¸å¯ä¸»åŠ¨ä½¿ç”¨æ‘†çƒ‚ï¼\n";
         if(wantk==3)
         {
-            cout<<"ÇëÑ¡Ôñ¸ÉÈÅ¶ÔÏó£º\n";
+            cout<<"è¯·é€‰æ‹©å¹²æ‰°å¯¹è±¡ï¼š\n";
             int LLt=leftn-1;
             int AIchoose=0;
             for(int i=1; i<=n; i++)
@@ -329,7 +329,7 @@ qip:
                 {
                     if(hold[ganrao][i]==2)
                     {
-                        cout<<name[ganrao]<<"³öÁËÒ»ÕÅ°ÚÀÃ£¬µÖÏûÁË¸ÉÈÅµÄÐ§¹û\n";
+                        cout<<name[ganrao]<<"å‡ºäº†ä¸€å¼ æ‘†çƒ‚ï¼ŒæŠµæ¶ˆäº†å¹²æ‰°çš„æ•ˆæžœ\n";
                         hasbailan=true;
                         bailanlv=holdlv[ganrao][i];
                         spendcard(ganrao,i);
@@ -338,11 +338,11 @@ qip:
                 }
                 if(hasbailan && bailanlv>1)
                 {
-                    cout<<ganrao<<"Ê¹ÓÃÁË";
+                    cout<<ganrao<<"ä½¿ç”¨äº†";
                     nameof(2,bailanlv);
-                    cout<<"£¬´¥·¢·´ÉËÐ§¹û\n";
+                    cout<<"ï¼Œè§¦å‘åä¼¤æ•ˆæžœ\n";
                     int tmp_should=(bailanlv+1)/3;
-                    cout<<"ÄãµÄ³É¼¨-"<<tmp_should<<"\n";
+                    cout<<"ä½ çš„æˆç»©-"<<tmp_should<<"\n";
                     score[I]-=tmp_should;
                     maydied(I);
                 }
@@ -351,12 +351,12 @@ qip:
                     int tmp_should=7+wantlv;
                     if(role[I]==2)
                     {
-                        cout<<name[ganrao]<<"Ã»ÓÐ°ÚÀÃ£¬´¥·¢ÖììÏÑó¼¼ÄÜ[·èÅú]£¬¿Û·Ö¶îÍâ+4\n";
+                        cout<<name[ganrao]<<"æ²¡æœ‰æ‘†çƒ‚ï¼Œè§¦å‘æœ±ç…œæ´‹æŠ€èƒ½[ç–¯æ‰¹]ï¼Œæ‰£åˆ†é¢å¤–+4\n";
                         tmp_should+=4;
                     }
-                    cout<<name[ganrao]<<"³É¼¨-"<<tmp_should<<"\n";
+                    cout<<name[ganrao]<<"æˆç»©-"<<tmp_should<<"\n";
                     score[ganrao]-=tmp_should;
-                    cout<<name[ganrao]<<"Ä¿Ç°·ÖÊý"<<score[ganrao]<<"/150\n";
+                    cout<<name[ganrao]<<"ç›®å‰åˆ†æ•°"<<score[ganrao]<<"/150\n";
                     maydied(ganrao);
                 }
             }
@@ -371,7 +371,7 @@ qip:
                 for(int j=1; j<=cn[i]; j++)
                     if(hold[i][j]==1)
                     {
-                        cout<<name[i]<<"Ê¹ÓÃÁË¸ÉÈÅ\n";
+                        cout<<name[i]<<"ä½¿ç”¨äº†å¹²æ‰°\n";
                         hasganrao=true;
                         spendcard(i,j);
                         break;
@@ -379,9 +379,9 @@ qip:
                 if(!hasganrao)
                 {
                     int tmp_should=8+wantlv/2;
-                    cout<<name[i]<<"Ã»ÓÐ¸ÉÈÅ£¬·ÖÊý-"<<tmp_should<<"\n";
+                    cout<<name[i]<<"æ²¡æœ‰å¹²æ‰°ï¼Œåˆ†æ•°-"<<tmp_should<<"\n";
                     score[i]-=tmp_should;
-                    cout<<name[i]<<"Ä¿Ç°·ÖÊý"<<score[i]<<"/150\n";
+                    cout<<name[i]<<"ç›®å‰åˆ†æ•°"<<score[i]<<"/150\n";
                     maydied(i);
                 }
             }
@@ -396,13 +396,13 @@ qip:
                 bool hasneijuan=false;
                 if(role[i]==3)
                 {
-                    cout<<"´¥·¢ÐìÄ½ìä¼¼ÄÜ[ÊýÑ§´óÀÐ]£¬ÎÞÊÓ±¾´Î¿¼ÊÔ\n";
+                    cout<<"è§¦å‘å¾æ…•ç†¹æŠ€èƒ½[æ•°å­¦å¤§ä½¬]ï¼Œæ— è§†æœ¬æ¬¡è€ƒè¯•\n";
                     break;
                 }
                 for(int j=1; j<=cn[i]; j++)
                     if(hold[i][j]==1)
                     {
-                        cout<<name[i]<<"Ê¹ÓÃÁËÄÚ¾í\n";
+                        cout<<name[i]<<"ä½¿ç”¨äº†å†…å·\n";
                         hasneijuan=true;
                         spendcard(i,j);
                         break;
@@ -410,9 +410,9 @@ qip:
                 if(!hasneijuan)
                 {
                     int tmp_should=8+wantlv/2;
-                    cout<<name[i]<<"Ã»ÓÐÄÚ¾í£¬·ÖÊý-"<<tmp_should<<"\n";
+                    cout<<name[i]<<"æ²¡æœ‰å†…å·ï¼Œåˆ†æ•°-"<<tmp_should<<"\n";
                     score[i]-=tmp_should;
-                    cout<<name[i]<<"Ä¿Ç°·ÖÊý"<<score[i]<<"/150\n";
+                    cout<<name[i]<<"ç›®å‰åˆ†æ•°"<<score[i]<<"/150\n";
                     maydied(i);
                 }
             }
@@ -421,10 +421,10 @@ qip:
         if(wantk==6)
         {
             if(neijuanjl)
-                cout<<name[neijuanjl]<<"ÒÑ¾­Ê¹ÓÃÁËÄÚ¾í½ûÁî£¡\n";
+                cout<<name[neijuanjl]<<"å·²ç»ä½¿ç”¨äº†å†…å·ç¦ä»¤ï¼\n";
             else
             {
-                cout<<"ËùÓÐÈË½ûÖ¹³öÄÚ¾íÒ»»ØºÏ\n";
+                cout<<"æ‰€æœ‰äººç¦æ­¢å‡ºå†…å·ä¸€å›žåˆ\n";
                 neijuanjl=I;
                 spendcard(I,wantt);
             }
@@ -439,9 +439,9 @@ qip:
                 if(alive[i] && score[i]==maxscore)
                 {
                     int tmp_should=8+wantlv/2;
-                    cout<<name[i]<<"±»ÖÆ²ÃÁË£¬·ÖÊý-"<<tmp_should<<"\n";
+                    cout<<name[i]<<"è¢«åˆ¶è£äº†ï¼Œåˆ†æ•°-"<<tmp_should<<"\n";
                     score[i]-=tmp_should;
-                    cout<<name[i]<<"Ä¿Ç°·ÖÊý"<<score[i]<<"/150\n";
+                    cout<<name[i]<<"ç›®å‰åˆ†æ•°"<<score[i]<<"/150\n";
                     maydied(i);
                 }
             spendcard(I,wantt);
@@ -456,16 +456,16 @@ qip:
                 if(alive[i] && score[i]==minscore)
                 {
                     int tmp_should=8+wantlv/4;
-                    cout<<name[i]<<"±»½±ÀøÁË£¬·ÖÊý+"<<tmp_should<<"\n";
+                    cout<<name[i]<<"è¢«å¥–åŠ±äº†ï¼Œåˆ†æ•°+"<<tmp_should<<"\n";
                     score[i]+=tmp_should;
                     if(score[i]>150)
                         score[i]=150;
-                    cout<<name[i]<<"Ä¿Ç°·ÖÊý"<<score[i]<<"/150\n";
+                    cout<<name[i]<<"ç›®å‰åˆ†æ•°"<<score[i]<<"/150\n";
                 }
             spendcard(I,wantt);
         }
         if(wantk==9)
-            cout<<"ÐÒÔË²Ý²»ÊÇÖ÷¶¯¿¨ÅÆ£¡\n";
+            cout<<"å¹¸è¿è‰ä¸æ˜¯ä¸»åŠ¨å¡ç‰Œï¼\n";
         if(fsuc)
             fcnt=0;
         else
@@ -483,11 +483,10 @@ qip:
         if(alive[i])
             winner=i;
     }
-    cout<<"Ê¤ÀûÕßÊÇ£º";
+    cout<<"èƒœåˆ©è€…æ˜¯ï¼š";
     if(winner==0)
-        cout<<"¿ÕÆø£¡\n";
+        cout<<"ç©ºæ°”ï¼\n";
     else
         cout<<name[winner]<<"\n";
-    while(1) cin>>winner;
     return 0;
 }

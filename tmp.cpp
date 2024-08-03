@@ -33,18 +33,8 @@ int main()
     freopen("in.in","r",stdin);
     // freopen("tmp.out","w",stdout);
 #endif  
-    cin>>h>>w>>y;
-    rep(i,1,h) rep(j,1,w)
-        cin>>a[++n];
-    sort(a+1,a+1+n);
-    int lev=0,pre=0;
-    int ans=n;
-    rep(i,1,y)
-    {
-        lev++;
-        int pos=lower_bound(a+1,a+1+n,lev)-a;
-        ans-=pos-pre; 
-        cout<<ans-(pos-pre)<<endl;
-        pre=pos;
-    }
-}
+    int cnt=0;
+    rep(i,100,999)
+        if((i/100!=i%10&&i%10!=(i/10)%10)) cnt++;
+        cout<<cnt;
+};
