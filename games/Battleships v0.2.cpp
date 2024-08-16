@@ -14,11 +14,11 @@ int AI_brain[105][105];
 void welcome()
 {
     system("cls");
-    cout<<"»¶Ó­À´µ½º£Õ½Æåv0.2£¡\n";
-    cout<<"Áé¸Ð£ºMasonXu    ´úÂë£ºMasonXu\n";
-    cout<<"A - ¿ªÊ¼Ë«ÈË¶ÔÕ½\n";
-    cout<<"B - ¿ªÊ¼ÈË»ú¶ÔÕ½\n";
-    cout<<"C - ËµÃ÷&ÉèÖÃ\n";
+    cout<<"æ¬¢è¿Žæ¥åˆ°æµ·æˆ˜æ£‹v0.2ï¼\n";
+    cout<<"çµæ„Ÿï¼šMasonXu    ä»£ç ï¼šMasonXu\n";
+    cout<<"A - å¼€å§‹åŒäººå¯¹æˆ˜\n";
+    cout<<"B - å¼€å§‹äººæœºå¯¹æˆ˜\n";
+    cout<<"C - è¯´æ˜Ž&è®¾ç½®\n";
     char key=getch();
     if(key=='b')
         isAI=true;
@@ -26,34 +26,34 @@ void welcome()
         return;
 Reset:
     system("cls");
-    cout<<"¹æÔò£º×Ô¼ºËÑ£¬ÀÁµÃÐ´ÁË\n";
-    cout<<"±¾´Î(v0.2)¸üÐÂÄÚÈÝ£º\n";
-    cout<<" (1) Ëæ»ú²¼ÖÃÅÌÃæ\n";
-    cout<<" (2) ÈË»ú¶ÔÕ½Ä£Ê½\n";
-    cout<<"A - ÐÐÊý:"<<n<<"\n";
-    cout<<"B - ÁÐÊý:"<<m<<"\n";
+    cout<<"è§„åˆ™ï¼šè‡ªå·±æœï¼Œæ‡’å¾—å†™äº†\n";
+    cout<<"æœ¬æ¬¡(v0.2)æ›´æ–°å†…å®¹ï¼š\n";
+    cout<<" (1) éšæœºå¸ƒç½®ç›˜é¢\n";
+    cout<<" (2) äººæœºå¯¹æˆ˜æ¨¡å¼\n";
+    cout<<"A - è¡Œæ•°:"<<n<<"\n";
+    cout<<"B - åˆ—æ•°:"<<m<<"\n";
     for(int i=1; i<=9; i++)
     {
-        cout<<(char)('B'+i)<<" - Ã¿ÈË1x"<<i<<"´¬Êý:"<<B[i]<<"\n";
+        cout<<(char)('B'+i)<<" - æ¯äºº1x"<<i<<"èˆ¹æ•°:"<<B[i]<<"\n";
     }
-    cout<<"°´A~K½øÐÐÉèÖÃ\n";
-    cout<<"°´ÆäËûÈÎÒâ¼ü»Øµ½Ö÷½çÃæ\n";
+    cout<<"æŒ‰A~Kè¿›è¡Œè®¾ç½®\n";
+    cout<<"æŒ‰å…¶ä»–ä»»æ„é”®å›žåˆ°ä¸»ç•Œé¢\n";
     key=getch();
     if(key>='a' && key<='k')
     {
         if(key=='a')
         {
-            cout<<"ÉèÖÃÎª¶àÉÙ£¿\n";
+            cout<<"è®¾ç½®ä¸ºå¤šå°‘ï¼Ÿ\n";
             cin>>n;
         }
         else if(key=='b')
         {
-            cout<<"ÉèÖÃÎª¶àÉÙ£¿\n";
+            cout<<"è®¾ç½®ä¸ºå¤šå°‘ï¼Ÿ\n";
             cin>>m;
         }
         else
         {
-            cout<<"ÉèÖÃÎª¶àÉÙ£¿\n";
+            cout<<"è®¾ç½®ä¸ºå¤šå°‘ï¼Ÿ\n";
             cin>>B[key-'b'];
         }
         goto Reset;
@@ -66,9 +66,9 @@ int main()
     system("title Battleships");
     welcome();
     int op=0;
-    cout<<"Íæ¼Ò1Ãû×Ö£º\n";
+    cout<<"çŽ©å®¶1åå­—ï¼š\n";
     cin>>Pame[0];
-    cout<<"Íæ¼Ò2Ãû×Ö£º\n";
+    cout<<"çŽ©å®¶2åå­—ï¼š\n";
     cin>>Pame[1];
     for(int i=1; i<=n; i++)
         for(int j=1; j<=m; j++)
@@ -136,11 +136,11 @@ Randomplace:
             continue;
         }
         system("cls");
-        cout<<"ÏÖÔÚÓÉ"<<Pame[ma]<<"²¼ÖÃÆåÅÌ\n";
+        cout<<"çŽ°åœ¨ç”±"<<Pame[ma]<<"å¸ƒç½®æ£‹ç›˜\n";
         getch();
         system("cls");
-        cout<<"ÊÇ·ñÊ¹ÓÃËæ»ú²¼ÖÃ£¿\n";
-        cout<<"ÊÇ(A) ·ñ(B)\n";
+        cout<<"æ˜¯å¦ä½¿ç”¨éšæœºå¸ƒç½®ï¼Ÿ\n";
+        cout<<"æ˜¯(A) å¦(B)\n";
         char _key=getch();
         if(_key=='a')
         {
@@ -156,7 +156,7 @@ Randomplace:
 Replace:
                 system("cls");
                 if(i>0)
-                    cout<<"·ÅÖÃ1x"<<i<<"µÄ´¬£º\n";
+                    cout<<"æ”¾ç½®1x"<<i<<"çš„èˆ¹ï¼š\n";
                 cout<<"  ";
                 for(int ii=1; ii<=m; ii++)
                 {
@@ -186,14 +186,14 @@ Replace:
                     getch();
                     break;
                 }
-                cout<<"ÊäÈë¸Ã´¬×óÉÏ½Ç×ø±ê£º\n";
+                cout<<"è¾“å…¥è¯¥èˆ¹å·¦ä¸Šè§’åæ ‡ï¼š\n";
                 int x,y;
                 char _TEMP;
                 cin>>_TEMP>>y;
                 x=(_TEMP>='A' && _TEMP<='Z'?_TEMP-'A'+1:_TEMP-'a'+1);
                 if(x<1 || x>n || y<1 || y>m)
                 {
-                    cout<<"×ø±ê³¬³ö±ß½ç£¡\n";
+                    cout<<"åæ ‡è¶…å‡ºè¾¹ç•Œï¼\n";
                     getch();
                     goto Replace;
                 }
@@ -203,18 +203,18 @@ Replace:
                 }
                 else
                 {
-                    cout<<"ÊäÈëºáÏò(H)ÊúÏò(S)\n";
+                    cout<<"è¾“å…¥æ¨ªå‘(H)ç«–å‘(S)\n";
                     cin>>_TEMP;
                 }
                 if(_TEMP!='H' && _TEMP!='S')
                 {
-                    cout<<"ÇëÊäÈë´óÐ´×ÖÄ¸H»òS\n";
+                    cout<<"è¯·è¾“å…¥å¤§å†™å­—æ¯Hæˆ–S\n";
                     getch();
                     goto Replace;
                 }
                 if(_TEMP=='H' && y+i-1>m || _TEMP=='S' && x+i-1>n)
                 {
-                    cout<<"×ø±ê³¬³ö±ß½ç£¡\n";
+                    cout<<"åæ ‡è¶…å‡ºè¾¹ç•Œï¼\n";
                     getch();
                     goto Replace;
                 }
@@ -228,7 +228,7 @@ Replace:
                 }
                 if(!flag)
                 {
-                    cout<<"¸Ã´¬²»ÄÜºÍÒÑÓÐµÄ´¬ÖØµþ£¬ÏàÁÚ»ò¶Ô½ÇÏàÁÚ£¡\n";
+                    cout<<"è¯¥èˆ¹ä¸èƒ½å’Œå·²æœ‰çš„èˆ¹é‡å ï¼Œç›¸é‚»æˆ–å¯¹è§’ç›¸é‚»ï¼\n";
                     getch();
                     goto Replace;
                 }
@@ -246,12 +246,12 @@ Replace:
             if(!isAI)
             {
                 system("cls");
-                cout<<"ÏÖÔÚÓÉ"<<Pame[op]<<"²Ù×÷";
+                cout<<"çŽ°åœ¨ç”±"<<Pame[op]<<"æ“ä½œ";
                 getch();
             }
 Reattark:
             system("cls");
-            cout<<"ÄãµÄÆåÅÌ£º\n";
+            cout<<"ä½ çš„æ£‹ç›˜ï¼š\n";
             cout<<"  ";
             for(int ii=1; ii<=m; ii++)
             {
@@ -280,7 +280,7 @@ Reattark:
                 }
                 cout<<"\n";
             }
-            cout<<Pame[!op]<<"µÄÆåÅÌ£º\n";
+            cout<<Pame[!op]<<"çš„æ£‹ç›˜ï¼š\n";
             cout<<"  ";
             for(int ii=1; ii<=m; ii++)
             {
@@ -313,13 +313,13 @@ Reattark:
             x=(_TEMP>='A' && _TEMP<='Z'?_TEMP-'A'+1:_TEMP-'a'+1);
             if(x<1 || x>n || y<1 || y>m)
             {
-                cout<<"×ø±ê³¬³ö±ß½ç£¡\n";
+                cout<<"åæ ‡è¶…å‡ºè¾¹ç•Œï¼\n";
                 getch();
                 goto Reattark;
             }
             if(a[!op][x][y]%2==1)
             {
-                cout<<"»÷ÖÐ£¡\n";
+                cout<<"å‡»ä¸­ï¼\n";
                 a[!op][x][y]=3;
                 a[!op][x-1][y-1]=2;
                 a[!op][x+1][y-1]=2;
@@ -328,7 +328,7 @@ Reattark:
             }
             else
             {
-                cout<<"Î´»÷ÖÐ\n";
+                cout<<"æœªå‡»ä¸­\n";
                 a[!op][x][y]=2;
             }
             getch();
@@ -336,7 +336,7 @@ Reattark:
         else
         {
             system("cls");
-            cout<<Pame[!op]<<"µÄÆåÅÌ£º\n";
+            cout<<Pame[!op]<<"çš„æ£‹ç›˜ï¼š\n";
             cout<<"  ";
             for(int ii=1; ii<=m; ii++)
             {
@@ -432,15 +432,15 @@ Reattark:
                 if(hitx>0)
                     break;
             }
-            cout<<Pame[op]<<"Ñ¡Ôñ¹¥»÷"<<(char)(hitx+'A'-1)<<hity<<"!\n";
+            cout<<Pame[op]<<"é€‰æ‹©æ”»å‡»"<<(char)(hitx+'A'-1)<<hity<<"!\n";
             if(a[!op][hitx][hity]%2==0)
             {
-                cout<<"Î´»÷ÖÐ\n";
+                cout<<"æœªå‡»ä¸­\n";
                 a[!op][hitx][hity]=2;
             }
             else
             {
-                cout<<"»÷ÖÐ£¡\n";
+                cout<<"å‡»ä¸­ï¼\n";
                 a[!op][hitx][hity]=3;
                 a[!op][hitx-1][hity-1]=2;
                 a[!op][hitx+1][hity-1]=2;
@@ -456,8 +456,8 @@ Reattark:
                     winflag=false;
         if(winflag)
         {
-            cout<<Pame[!op]<<"µÄËùÓÐÕ½½¢¾ù±»»÷³Á£¡\n";
-            cout<<Pame[op]<<"»ñÊ¤£¡£¡";
+            cout<<Pame[!op]<<"çš„æ‰€æœ‰æˆ˜èˆ°å‡è¢«å‡»æ²‰ï¼\n";
+            cout<<Pame[op]<<"èŽ·èƒœï¼ï¼";
             break;
         }
         op=!op;
