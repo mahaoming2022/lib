@@ -14,21 +14,19 @@ int dp[N][N];bool vis[N][N];
 
 void bfs()
 {
-    rep(i,1,n) rep(j,1,n) vis[i][j]=0;
+    rep(i,1,n) rep(j,1,n) dp[i][j]=-1;
     dp[1][1]=0;
     q.push({1,1});
     while(!q.empty())
     {
         int x=q.front().first,y=q.front().second;
-        cout<<x<<' '<<y<<endl;
         q.pop();
-        if(vis[x][y]) continue;
-        vis[x][y]=1;
         for(auto d:D)
         {
             int xx=x+d.first,yy=y+d.second;
             if(xx<1||xx>n||yy<1||yy>n)
                 continue;
+            if(dp[xx][yy]!=-1) continue;
             dp[xx][yy]=dp[x][y]+1;
             q.push({xx,yy});
         }
@@ -46,6 +44,7 @@ int main()
         rep(j,-1000,1000)
             if(i*i+j*j==m)
                 D.push_back({i,j});
+    bfs();
     rep(i,1,n){
         rep(j,1,n)
             cout<<dp[i][j]<<' ';
