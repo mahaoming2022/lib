@@ -49,24 +49,24 @@ void calc_size(int j)
         lp=ac[i.first].fi*(ll)ceil(lp/ac[i.first].fi);
         lp+=ac[i.first].o_size;
     }
-    a[j].o_size=lp;
+    ac[j].o_size=lp;
 }
 
-void calc_start_pos()
+void calc_start_pos(int j)
 {
-    ll fi1=ac[ty].fi;
-    start_pos=fi1*(ll)ceil(latest_pos/fi1);
-    latest_pos=start_pos;
+    ll fi1=ac[ad[j].ty].fi;
+    ad[j].start_pos=fi1*(ll)ceil(latest_pos/fi1);
+    latest_pos=ad[j].start_pos;
 }
-void calc_end_pos()
+void calc_end_pos(int j)
 {
-    for(auto i:ac[ty].mem)
+    for(auto i:ac[ad[j].ty].mem)
     {
         ll fi2=ac[i.first].fi;
         latest_pos=fi2*(ll)ceil(latest_pos/fi2);
         latest_pos+=ac[i.first].o_size;
     }
-    end_pos=latest_pos;
+    ad[j].end_pos=latest_pos;
 }
 
 
@@ -95,8 +95,8 @@ void new_ele()
     // name_ele[ne.name]=cnt2;
     name_ele[ne.name]=cnt2;
     ad[cnt2]=ne;
-    ad[cnt2].calc_start_pos();
-    ad[cnt2].calc_end_pos();
+    calc_start_pos(cnt2);
+    calc_end_pos(cnt2);
 }
 
 
