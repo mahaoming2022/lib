@@ -30,6 +30,8 @@ void read(T& x){x=0;T f=1;char ch=getchar();
 template<typename T> inline
 void write(T x){if(x<0){putchar('-');x=-x;}if(x>9) write(x/10);putchar(x%10+'0');}
 
+string s,t;
+
 int main()
 {
 #ifndef ONLINE_JUDGE
@@ -37,7 +39,13 @@ int main()
     freopen("out.out","w",stdout);
 #endif
     ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);
-    
+    cin>>s>>t;
+    s=s+' ';
+    for(int i=0;i<t.size();i++)
+        if(s[i]!=t[i])
+        {
+            cout<<i+1;break;
+        }
 }
 
 // hope to debug successfully

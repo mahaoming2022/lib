@@ -1,41 +1,46 @@
 #include <bits/stdc++.h>
+#define rep(i,l,r) for(int i=(l);i<=(r);i++)
 
 using namespace std;
+typedef long long ll;
+typedef double db;
 
-vector<int> a;
-vector<int> b;
-vector<int> c;
+const int N=20;
+const db INF=1e9+24;
 
-string ast,bst;
+int n;
+db x[N],y[N],mem[N][1<<N];
+bool vis[N][1<<N];
+
+db edst(db x1,db y1,db x2,db y2)
+{
+    return (db)(sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2)));
+}
+
+db dp(int i,int k)
+{
+	if(mem[i][k]!=0.0) return mem[i][k];
+	db Ans=INF;
+    if(k==0) return mem[i][k]=edst(x[i],y[i],0,0);
+    vis[i][k]=1;
+    rep(j,1,n)
+    {
+        if((k&(1<<(j-1)))==0) continue;
+        Ans=min(Ans,edst(x[i],y[i],x[j],y[j])+dp(j,k-(1<<(j-1))));
+    }
+    return mem[i][k]=Ans;
+}
 
 int main()
 {
-    cin>>ast>>bst;
-	string tmp;
-	tmp=ast;
-	reverse(ast.begin(),ast.end());
-	ast=tmp+ast;
-	tmp=bst;
-	reverse(bst.begin(),bst.end());
-	bst=tmp+bst;
-    int len1=ast.size(),len2=bst.size();
-    int len3=len1+len2;
-    c.resize(len3,0);
-	for(int i=len1-1;i>=0;--i)
-        a.push_back(ast[i]-'0');
-	for(int i=len2-1;i>=0;--i)
-        b.push_back(bst[i]-'0');
-    for(int i=0;i<len1;i++)
-        for(int j=0;j<len2;j++)
-            c[i+j]+=a[i]*b[j];
-    for(int i=0;i<len3;++i)
-        if(c[i]>=10)
-        {
-            c[i+1]+=c[i]/10;
-            c[i]%=10;
-        }
-    while(c.size()>1&&c.back()==0)
-        c.pop_back();
-    for(int i=c.size()-1;i>=0;--i)
-        cout<<c[i];
+#ifndef ONLINE_JUDGE
+    freopen("in.in","r",stdin);
+    freopen("out.out","w",stdout);
+#endif
+    ios::sync_with_stdio(false);
+    cin>>n;
+    rep(i,1,n) cin>>x[i]>>y[i];
+    db ans=INF;
+    rep(i,1,n) ans=min(ans,dp(i,(1<<n)-1-(1<<(i-1))));
+   printf("%.2lf\n",ans);
 }

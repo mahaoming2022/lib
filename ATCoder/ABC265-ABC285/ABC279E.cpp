@@ -1,6 +1,3 @@
-// Written by da_ke
-// Website: https://mahaoming2022.github.io
-
 #include <bits/stdc++.h>
 
 #define i64 long long
@@ -30,14 +27,27 @@ void read(T& x){x=0;T f=1;char ch=getchar();
 template<typename T> inline
 void write(T x){if(x<0){putchar('-');x=-x;}if(x>9) write(x/10);putchar(x%10+'0');}
 
+int n,m;
+
 int main()
 {
 #ifndef ONLINE_JUDGE
     freopen("in.in","r",stdin);
     freopen("out.out","w",stdout);
 #endif
-    ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);
-    
+    cin>>n>>m;
+    vector<int> a(m+1),b(n+1),pos(n+1);
+    rep(i,1,m) cin>>a[i];
+    rep(i,1,n) b[i]=i;
+    rep(i,1,m) swap(b[a[i]],b[a[i]+1]); // 操作
+    rep(i,1,n) pos[b[i]]=i,b[i]=i; // 还原
+    rep(i,1,m)
+    {
+        if(b[a[i]]==1)
+            cout<<pos[b[a[i]+1]]<<endl;
+        else if(b[a[i]+1]==1)
+            cout<<pos[b[a[i]]]<<endl;
+        else cout<<pos[1]<<endl;
+        swap(b[a[i]],b[a[i]+1]);
+    }
 }
-
-// hope to debug successfully
