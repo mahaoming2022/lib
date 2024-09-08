@@ -1,46 +1,48 @@
-#include <bits/stdc++.h>
-#define rep(i,l,r) for(int i=(l);i<=(r);i++)
-
+#include <iostream>
+#include <vector>
 using namespace std;
-typedef long long ll;
-typedef double db;
-
-const int N=20;
-const db INF=1e9+24;
-
-int n;
-db x[N],y[N],mem[N][1<<N];
-bool vis[N][1<<N];
-
-db edst(db x1,db y1,db x2,db y2)
-{
-    return (db)(sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2)));
-}
-
-db dp(int i,int k)
-{
-	if(mem[i][k]!=0.0) return mem[i][k];
-	db Ans=INF;
-    if(k==0) return mem[i][k]=edst(x[i],y[i],0,0);
-    vis[i][k]=1;
-    rep(j,1,n)
-    {
-        if((k&(1<<(j-1)))==0) continue;
-        Ans=min(Ans,edst(x[i],y[i],x[j],y[j])+dp(j,k-(1<<(j-1))));
-    }
-    return mem[i][k]=Ans;
-}
 
 int main()
 {
-#ifndef ONLINE_JUDGE
-    freopen("in.in","r",stdin);
-    freopen("out.out","w",stdout);
-#endif
-    ios::sync_with_stdio(false);
-    cin>>n;
-    rep(i,1,n) cin>>x[i]>>y[i];
-    db ans=INF;
-    rep(i,1,n) ans=min(ans,dp(i,(1<<n)-1-(1<<(i-1))));
-   printf("%.2lf\n",ans);
+	int N, M;
+	cin >> N >> M;
+	vector<int> A(N), B(N);
+	for (int i = 0; i < N; i++)
+		cin >> A[i] >> B[i];
+	vector<vector<int>> inv(M + 1);
+	for (int i = 0; i < N; i++)
+	{
+		inv[A[i]].push_back(i);
+		inv[B[i]].push_back(i);
+	}
+	vector<int> cnt(N), ans(M + 3);
+	int cnt_zero = N;
+	for (int i = 1, j = 1; i <= M;)
+	{
+		while (j <= M and cnt_zero != 0)
+		{
+			for (auto &x : inv[j])
+			{
+				if (cnt[x] == 0)
+					cnt_zero--;
+				cnt[x]++;
+			}
+			j++;
+		}
+		if (cnt_zero != 0)
+			break;
+		ans[j - i]++, ans[M + 1 - i + 1]--;
+		for (auto &x : inv[i])
+		{
+			cnt[x]--;
+			if (cnt[x] == 0)
+				cnt_zero++;
+		}
+		i++;
+	}
+	for (int i = 1; i <= M; i++)
+	{
+		ans[i] += ans[i - 1];
+		cout << ans[i] << " \n"[i == M];
+	}
 }

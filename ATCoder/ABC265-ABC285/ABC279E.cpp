@@ -11,7 +11,7 @@ typedef double db;
 typedef __int128 i128;
 
 const int INF=1<<29;
-const ll INFL=1ll<59;
+const ll INFL=1ll<<59;
 
 //fast IO
 inline int readi(){int x=0,f=1;char ch=getchar();

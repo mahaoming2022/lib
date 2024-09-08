@@ -6,7 +6,7 @@ using namespace std;
 
 typedef long long ll;
 
-const int N=1e5+23;
+const int N=1e6+23;
 
 int n,Q;
 string str;
@@ -60,20 +60,16 @@ inline void dfs2(int u)
 
 int main()
 {
-#ifndef ONLINE_JUDGE
-    freopen("in.in","r",stdin);
-    freopen("out.out","w",stdout);
-    //believe2024zk
-#endif
     ios::sync_with_stdio(false);
+    cin.tie(0);
+	cout.tie(0);
     getline(cin,str);
     int len=str.size();
     cin>>n;
     rep(i,1,n)
         cin>>a[i];
     int cnt=0;  
-    for(int i=0;i<len;)
-    {
+    for(int i=0;i<len;){
         if(str[i]==' ')
         {
             i++;

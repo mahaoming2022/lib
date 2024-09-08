@@ -13,6 +13,8 @@ typedef long long ll;
 typedef double db;
 typedef __int128 i128;
 
+int l,r;
+
 int main()
 {
 #ifndef ONLINE_JUDGE
@@ -20,7 +22,10 @@ int main()
     freopen("out.out","w",stdout);
 #endif
     ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);
-    
+    cin>>l>>r;
+    if(l==1&&r!=1) cout<<"Yes";
+    else if(l!=1&&r==1) cout<<"No";
+    else cout<<"Invalid";
 }
 
 // hope to debug successfully

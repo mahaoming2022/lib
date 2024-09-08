@@ -13,6 +13,9 @@ typedef long long ll;
 typedef double db;
 typedef __int128 i128;
 
+int n;
+int a[114][114];
+
 int main()
 {
 #ifndef ONLINE_JUDGE
@@ -20,7 +23,15 @@ int main()
     freopen("out.out","w",stdout);
 #endif
     ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);
-    
+    cin>>n;
+    rep(i,1,n) rep(j,1,i) cin>>a[i][j];
+    int i=1;
+    rep(j,1,n)
+    {
+        if(i>=j) i=a[i][j];
+        else if(i<j) i=a[j][i];
+    }
+    cout<<i;
 }
 
 // hope to debug successfully
