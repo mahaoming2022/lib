@@ -10,7 +10,12 @@ typedef long long ll;
 typedef double db;
 typedef __int128 i128;
 
+const int N=4e5+23;
+
 int n,m,k;
+int dis[N];
+bool vis[N];
+vector<pair<int,int> > linker[N];
 
 int main()
 {
@@ -20,7 +25,6 @@ int main()
 #endif
     ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);
     cin>>n>>m>>k;
-    vector<vector<pair<int,int> > > linker(2*n+1);
     rep(i,1,m)
     {
         int u,v,w;
@@ -28,30 +32,28 @@ int main()
         if(w==1) linker[u].push_back({v,1}),linker[v].push_back({u,1});
         else linker[u+n].push_back({v+n,1}),linker[v+n].push_back({u+n,1});
     }
-    rep(i,1,k)
-    {
+    while(k--)
+    { 
         int u;cin>>u;
         linker[u].push_back({u+n,0});
         linker[u+n].push_back({u,0});
     }
-    priority_queue<pair<int,int> > q;
-    vector<int> dis(2*n+1,1<<29);
-    vector<bool> vis(2*n+1,0); 
-    dis[1]==0;
-    q.push({0,1});
+    deque<int> q;
+    rep(i,1,2*n) dis[i]=1<<29;
+    dis[1]=0;
+    q.push_back(1);
     while(!q.empty())
     {
-        int u=q.top().second;
-        q.pop();
-        if(vis[u]) continue;
-        vis[u]=1;
+        int u=q.front();
+        q.pop_front();
         for(auto i:linker[u])
         {
             int v=i.first,w=i.second;
-            if(dis[u]+w<dis[v])
+            if(dis[v]>dis[u]+w)
             {
                 dis[v]=dis[u]+w;
-                q.push({dis[v],v});
+                if(w==0) q.push_front(v);
+                else q.push_back(v);
             }
         }
     }

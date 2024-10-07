@@ -42,7 +42,7 @@ void calc_size(int j)
     if(ac[j].name=="byte"){ac[j].o_size=0;return ;}
     if(ac[j].name=="short"){ac[j].o_size=1;return ;}
     if(ac[j].name=="int"){ac[j].o_size=3;return ;}
-    if(ac[j].name=="long"){ac[j].o_size=7;return ;}
+    if(ac[j].name=="long"){ac[j].o_size=7;return ;} 
     ll lp=0;
     for(auto i:ac[j].mem)
     {
@@ -57,7 +57,7 @@ void calc_start_pos(int j)
     ll fi1=ac[ad[j].ty].fi;
     ad[j].start_pos=fi1*(ll)ceil(latest_pos/fi1);
     latest_pos=ad[j].start_pos;
-}
+} 
 void calc_end_pos(int j)
 {
     for(auto i:ac[ad[j].ty].mem)
